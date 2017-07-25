@@ -11,6 +11,7 @@ import UIKit
 //import RealmSwift
 
 let client = "first-baptist-cleveland/"
+let clientTitle = "First Baptist Cleveland"
 //let client = "eei1kcek"
 //let client = "5bjwxjum"
 

@@ -45,7 +45,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = client
+        self.title = clientTitle
         anApiController = APIController(delegate: self)
         anApiController.getVideoFullServicesDataFromVimeo(theseVideosString)
         monkeyTableView.tableFooterView = UIView()

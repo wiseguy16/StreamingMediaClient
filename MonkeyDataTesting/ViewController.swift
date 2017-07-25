@@ -38,13 +38,14 @@ class ViewController: UIViewController {
     var arrayOfVideos: [Video] = []
     var monkeys: [MonkeyChannel] = []
     var monkeyCategories: [MonkeyCategory] = []
-    var theseVideosString = "first-baptist-cleveland"
+    var theseVideosString = client
     var apiStrings: [String] = []
 
     var anApiController: APIController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = client
         anApiController = APIController(delegate: self)
         anApiController.getVideoFullServicesDataFromVimeo(theseVideosString)
         monkeyTableView.tableFooterView = UIView()

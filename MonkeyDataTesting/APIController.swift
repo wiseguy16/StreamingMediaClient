@@ -10,6 +10,12 @@ import Foundation
 import UIKit
 //import RealmSwift
 
+let client = "first-baptist-cleveland/"
+//let client = "eei1kcek"
+//let client = "5bjwxjum"
+
+
+
 class APIController
 {
     
@@ -108,7 +114,7 @@ class APIController
     func getVideoDataFromMonkey(_ theseVideos: String)
     {
         
-        let URLString = baseURLString + "first-baptist-cleveland/" + theseVideos
+        let URLString = baseURLString + client + theseVideos
         let myURL = URL(string: URLString)
         var request = URLRequest(url: myURL!)
         

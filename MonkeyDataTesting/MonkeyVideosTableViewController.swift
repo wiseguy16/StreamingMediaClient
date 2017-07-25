@@ -27,10 +27,6 @@ class MonkeyVideosTableViewController: UITableViewController {
         tableView.reloadData()
         print(playlists.count)
         anApiController = APIController(delegate: self)
-//        if let thisList = monkeyPlaylistInfo.id {
-//            
-//            anApiController.getVideoDataFromMonkey(thisList)
-//        }
 
         tableView.tableFooterView = UIView()
 
@@ -90,12 +86,11 @@ class MonkeyVideosTableViewController: UITableViewController {
             if let path = tableView.indexPathForSelectedRow {
                let aList = playlists[path.row]
                 let destVC = segue.destination as! DetailsViewController
-                guard let aTitle = aList.title, let urlString = aList.image, let deskrip = aList.deskript else { return }
+                guard let aTitle = aList.title, let urlString = aList.image, let deskrip = aList.deskript, let id = aList.id else { return }
                 destVC.labelString = aTitle
                 destVC.imageURLString = urlString
                 destVC.deskriptDetails = deskrip
-
-
+                destVC.thisList = id
             }
             
           //  let destVC = segue.destination as! DetailsViewController

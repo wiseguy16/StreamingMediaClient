@@ -31,6 +31,7 @@
 		4AC1FEDC1F26861100613334 /* MonkeyVideosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC1FEDB1F26861000613334 /* MonkeyVideosTableViewController.swift */; };
 		4AC1FEDE1F26869B00613334 /* MonkeyVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC1FEDD1F26869B00613334 /* MonkeyVideoCell.swift */; };
 		4AC1FEE01F27AE1700613334 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC1FEDF1F27AE1700613334 /* DetailsViewController.swift */; };
+		4AC1FEE21F27C1F200613334 /* DetailVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC1FEE11F27C1F200613334 /* DetailVideoCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		4AC1FEDB1F26861000613334 /* MonkeyVideosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonkeyVideosTableViewController.swift; sourceTree = "<group>"; };
 		4AC1FEDD1F26869B00613334 /* MonkeyVideoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonkeyVideoCell.swift; sourceTree = "<group>"; };
 		4AC1FEDF1F27AE1700613334 /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		4AC1FEE11F27C1F200613334 /* DetailVideoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailVideoCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 				4A02788C1F2109D90060DAC3 /* Video.swift */,
 				4A02788E1F2109F30060DAC3 /* DataManager.swift */,
 				4AC1FED91F267BD500613334 /* RefTableViewController.swift */,
+				4AC1FEE11F27C1F200613334 /* DetailVideoCell.swift */,
 				4AC1FEC71F21492B00613334 /* MonkeyPlaylist.swift */,
 				4AC1FED71F267BAE00613334 /* MonkeyCell.swift */,
 				4AC1FEDD1F26869B00613334 /* MonkeyVideoCell.swift */,
@@ -210,6 +213,7 @@
 				4AC1FEDA1F267BD500613334 /* RefTableViewController.swift in Sources */,
 				4AC1FECE1F21617C00613334 /* MonkeyCategoryViewController.swift in Sources */,
 				4A0278741F2105050060DAC3 /* AppDelegate.swift in Sources */,
+				4AC1FEE21F27C1F200613334 /* DetailVideoCell.swift in Sources */,
 				4A02788D1F2109D90060DAC3 /* Video.swift in Sources */,
 				4AC1FED81F267BAF00613334 /* MonkeyCell.swift in Sources */,
 				4AC1FECA1F21497300613334 /* MonkeyImage.swift in Sources */,

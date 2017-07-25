@@ -130,7 +130,7 @@ extension ViewController: APIControllerProtocol {
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Videos On Demand"
+        return "Videos On Demand - Categories"
     }
      func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -158,9 +158,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             }
 
         }
-//        if let url = changeStringToURL(aCat.image) {
-//            print(url)
-//        }
         
         // Configure the cell...
         
@@ -175,10 +172,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         detailVC.monkeyCat = aCat
         detailVC.monkeyPlaylistInfo = aListInfo
         self.navigationController?.pushViewController(detailVC, animated: true)
-        
-//        present(detailVC, animated: true, completion: nil)
-
-        
     }
     
    

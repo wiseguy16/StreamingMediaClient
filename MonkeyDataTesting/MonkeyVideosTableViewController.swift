@@ -22,6 +22,7 @@ class MonkeyVideosTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Playlists"
         playlists = monkeyCat.playlistsInfo!
         tableView.reloadData()
         print(playlists.count)
@@ -75,59 +76,47 @@ class MonkeyVideosTableViewController: UITableViewController {
                 cell.monkeyImageView.image = UIImage(data: data!)
             }
         }
-
-
         // Configure the cell...
 
         return cell
     }
     
+    
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "DetailsSegue" {
+            if let path = tableView.indexPathForSelectedRow {
+               let aList = playlists[path.row]
+                let destVC = segue.destination as! DetailsViewController
+                guard let aTitle = aList.title, let urlString = aList.image, let deskrip = aList.deskript else { return }
+                destVC.labelString = aTitle
+                destVC.imageURLString = urlString
+                destVC.deskriptDetails = deskrip
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
 
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
+            }
+            
+          //  let destVC = segue.destination as! DetailsViewController
+          //  destVC.labelString = aList.title
+            print("In the Segue")
+        }
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+    
 
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        tableView.deselectRow(at: indexPath, animated: true)
+//       // let aCat = monkeyCategories[indexPath.row]
+//       // let aListInfo = aCat.playlistsInfo![0]
+//        let detailVC = self.storyboard?.instantiateViewController(withIdentifier: "MonkeyVideosTableViewController") as! MonkeyVideosTableViewController
+//       // detailVC.monkeyCat = aCat
+//       // detailVC.monkeyPlaylistInfo = aListInfo
+//        self.navigationController?.pushViewController(detailVC, animated: true)
+//    }
 }
 
 extension MonkeyVideosTableViewController: APIControllerProtocol {

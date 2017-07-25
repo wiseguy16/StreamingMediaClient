@@ -13,6 +13,23 @@
 		4A02787C1F2105050060DAC3 /* MonkeyDataTesting.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4A02787A1F2105050060DAC3 /* MonkeyDataTesting.xcdatamodeld */; };
 		4A02787E1F2105050060DAC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A02787D1F2105050060DAC3 /* Assets.xcassets */; };
 		4A0278811F2105050060DAC3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A02787F1F2105050060DAC3 /* LaunchScreen.storyboard */; };
+		4A02788B1F2109C40060DAC3 /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A02788A1F2109C40060DAC3 /* APIController.swift */; };
+		4A02788D1F2109D90060DAC3 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A02788C1F2109D90060DAC3 /* Video.swift */; };
+		4A02788F1F2109F30060DAC3 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A02788E1F2109F30060DAC3 /* DataManager.swift */; };
+		4AC1FEC01F21126400613334 /* MonkeyChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC1FEBF1F21126400613334 /* MonkeyChannel.swift */; };
+		4AC1FEC21F21489F00613334 /* FeaturedMonkey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC1FEC11F21489F00613334 /* FeaturedMonkey.swift */; };
+		4AC1FEC41F2148DF00613334 /* MonkeyCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC1FEC31F2148DF00613334 /* MonkeyCategory.swift */; };
+		4AC1FEC61F21490300613334 /* LiveMonkey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC1FEC51F21490300613334 /* LiveMonkey.swift */; };
+		4AC1FEC81F21492B00613334 /* MonkeyPlaylist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC1FEC71F21492B00613334 /* MonkeyPlaylist.swift */; };
+		4AC1FECA1F21497300613334 /* MonkeyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC1FEC91F21497300613334 /* MonkeyImage.swift */; };
+		4AC1FECC1F214EBF00613334 /* MonkeyImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC1FECB1F214EBF00613334 /* MonkeyImagesViewController.swift */; };
+		4AC1FECE1F21617C00613334 /* MonkeyCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC1FECD1F21617C00613334 /* MonkeyCategoryViewController.swift */; };
+		4AC1FED01F22798100613334 /* MonkeyPlaylistInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC1FECF1F22798100613334 /* MonkeyPlaylistInfo.swift */; };
+		4AC1FED61F26704300613334 /* MonkeyVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC1FED51F26704300613334 /* MonkeyVideo.swift */; };
+		4AC1FED81F267BAF00613334 /* MonkeyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC1FED71F267BAE00613334 /* MonkeyCell.swift */; };
+		4AC1FEDA1F267BD500613334 /* RefTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC1FED91F267BD500613334 /* RefTableViewController.swift */; };
+		4AC1FEDC1F26861100613334 /* MonkeyVideosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC1FEDB1F26861000613334 /* MonkeyVideosTableViewController.swift */; };
+		4AC1FEDE1F26869B00613334 /* MonkeyVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC1FEDD1F26869B00613334 /* MonkeyVideoCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +41,23 @@
 		4A02787D1F2105050060DAC3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A0278801F2105050060DAC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4A0278821F2105050060DAC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A02788A1F2109C40060DAC3 /* APIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
+		4A02788C1F2109D90060DAC3 /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		4A02788E1F2109F30060DAC3 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		4AC1FEBF1F21126400613334 /* MonkeyChannel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonkeyChannel.swift; sourceTree = "<group>"; };
+		4AC1FEC11F21489F00613334 /* FeaturedMonkey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturedMonkey.swift; sourceTree = "<group>"; };
+		4AC1FEC31F2148DF00613334 /* MonkeyCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonkeyCategory.swift; sourceTree = "<group>"; };
+		4AC1FEC51F21490300613334 /* LiveMonkey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveMonkey.swift; sourceTree = "<group>"; };
+		4AC1FEC71F21492B00613334 /* MonkeyPlaylist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonkeyPlaylist.swift; sourceTree = "<group>"; };
+		4AC1FEC91F21497300613334 /* MonkeyImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonkeyImage.swift; sourceTree = "<group>"; };
+		4AC1FECB1F214EBF00613334 /* MonkeyImagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonkeyImagesViewController.swift; sourceTree = "<group>"; };
+		4AC1FECD1F21617C00613334 /* MonkeyCategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonkeyCategoryViewController.swift; sourceTree = "<group>"; };
+		4AC1FECF1F22798100613334 /* MonkeyPlaylistInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonkeyPlaylistInfo.swift; sourceTree = "<group>"; };
+		4AC1FED51F26704300613334 /* MonkeyVideo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonkeyVideo.swift; sourceTree = "<group>"; };
+		4AC1FED71F267BAE00613334 /* MonkeyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonkeyCell.swift; sourceTree = "<group>"; };
+		4AC1FED91F267BD500613334 /* RefTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefTableViewController.swift; sourceTree = "<group>"; };
+		4AC1FEDB1F26861000613334 /* MonkeyVideosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonkeyVideosTableViewController.swift; sourceTree = "<group>"; };
+		4AC1FEDD1F26869B00613334 /* MonkeyVideoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonkeyVideoCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +91,24 @@
 			isa = PBXGroup;
 			children = (
 				4A0278731F2105050060DAC3 /* AppDelegate.swift */,
+				4A02788E1F2109F30060DAC3 /* DataManager.swift */,
+				4AC1FED91F267BD500613334 /* RefTableViewController.swift */,
+				4AC1FEC71F21492B00613334 /* MonkeyPlaylist.swift */,
+				4AC1FED71F267BAE00613334 /* MonkeyCell.swift */,
+				4AC1FEDD1F26869B00613334 /* MonkeyVideoCell.swift */,
+				4AC1FECF1F22798100613334 /* MonkeyPlaylistInfo.swift */,
+				4AC1FED51F26704300613334 /* MonkeyVideo.swift */,
+				4AC1FEC91F21497300613334 /* MonkeyImage.swift */,
+				4AC1FEC51F21490300613334 /* LiveMonkey.swift */,
+				4AC1FEC31F2148DF00613334 /* MonkeyCategory.swift */,
+				4AC1FEDB1F26861000613334 /* MonkeyVideosTableViewController.swift */,
+				4AC1FEC11F21489F00613334 /* FeaturedMonkey.swift */,
+				4AC1FEBF1F21126400613334 /* MonkeyChannel.swift */,
+				4A02788C1F2109D90060DAC3 /* Video.swift */,
+				4A02788A1F2109C40060DAC3 /* APIController.swift */,
 				4A0278751F2105050060DAC3 /* ViewController.swift */,
+				4AC1FECB1F214EBF00613334 /* MonkeyImagesViewController.swift */,
+				4AC1FECD1F21617C00613334 /* MonkeyCategoryViewController.swift */,
 				4A0278771F2105050060DAC3 /* Main.storyboard */,
 				4A02787D1F2105050060DAC3 /* Assets.xcassets */,
 				4A02787F1F2105050060DAC3 /* LaunchScreen.storyboard */,
@@ -99,7 +150,7 @@
 				TargetAttributes = {
 					4A02786F1F2105050060DAC3 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = XXXAJJ4LC9;
+						DevelopmentTeam = Q8WPW9BZ33;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -140,9 +191,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A02788B1F2109C40060DAC3 /* APIController.swift in Sources */,
+				4AC1FEC81F21492B00613334 /* MonkeyPlaylist.swift in Sources */,
+				4A02788F1F2109F30060DAC3 /* DataManager.swift in Sources */,
+				4AC1FEDC1F26861100613334 /* MonkeyVideosTableViewController.swift in Sources */,
+				4AC1FEC61F21490300613334 /* LiveMonkey.swift in Sources */,
+				4AC1FEC21F21489F00613334 /* FeaturedMonkey.swift in Sources */,
 				4A0278761F2105050060DAC3 /* ViewController.swift in Sources */,
+				4AC1FED61F26704300613334 /* MonkeyVideo.swift in Sources */,
+				4AC1FED01F22798100613334 /* MonkeyPlaylistInfo.swift in Sources */,
 				4A02787C1F2105050060DAC3 /* MonkeyDataTesting.xcdatamodeld in Sources */,
+				4AC1FEC41F2148DF00613334 /* MonkeyCategory.swift in Sources */,
+				4AC1FECC1F214EBF00613334 /* MonkeyImagesViewController.swift in Sources */,
+				4AC1FEDA1F267BD500613334 /* RefTableViewController.swift in Sources */,
+				4AC1FECE1F21617C00613334 /* MonkeyCategoryViewController.swift in Sources */,
 				4A0278741F2105050060DAC3 /* AppDelegate.swift in Sources */,
+				4A02788D1F2109D90060DAC3 /* Video.swift in Sources */,
+				4AC1FED81F267BAF00613334 /* MonkeyCell.swift in Sources */,
+				4AC1FECA1F21497300613334 /* MonkeyImage.swift in Sources */,
+				4AC1FEDE1F26869B00613334 /* MonkeyVideoCell.swift in Sources */,
+				4AC1FEC01F21126400613334 /* MonkeyChannel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,7 +335,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = XXXAJJ4LC9;
+				DEVELOPMENT_TEAM = Q8WPW9BZ33;
 				INFOPLIST_FILE = MonkeyDataTesting/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gergusa.MonkeyDataTesting;
@@ -280,7 +348,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = XXXAJJ4LC9;
+				DEVELOPMENT_TEAM = Q8WPW9BZ33;
 				INFOPLIST_FILE = MonkeyDataTesting/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gergusa.MonkeyDataTesting;
@@ -308,6 +376,7 @@
 				4A0278871F2105050060DAC3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

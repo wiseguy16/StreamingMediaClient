@@ -56,6 +56,8 @@ class ViewController: UIViewController {
         anApiController.getVideoFullServicesDataFromVimeo(theseVideosString)
         backupURL = URL(string: backupURLString)
         monkeyTableView.tableFooterView = UIView()
+        CoreDataManager.fetchObj()
+       // anApiController.getAllVideoDataFromMonkey()
 
         // Do any additional setup after loading the view, typically from a nib.
     }

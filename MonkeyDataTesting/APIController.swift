@@ -14,6 +14,7 @@ let client = "first-baptist-cleveland/"
 let clientTitle = "First Baptist Cleveland"
 //let client = "eei1kcek"
 //let client = "5bjwxjum"
+let dataBaseEntryPoint = "api/videos?username=awolfe@clevelandfbc.com"
 
 
 
@@ -34,6 +35,7 @@ class APIController
    // var arrayOfFeatured = [Featured]()
     
      var checkArrayAudioRlm = [String]()
+    var testArray = [String]()
     
     var delegate: APIControllerProtocol!
     
@@ -41,18 +43,11 @@ class APIController
     
     let errorDomain = "VimeoClientErrorDomain"
     let baseURLString = "http://www.streammonkey.com/feeds/channels/"
+    let minBaseURL = "http://www.streammonkey.com/"
 
     // url might look like: "https://api.vimeo.com/users/northlandchurch/albums/3730564/videos?per_page=15"
     let authToken5 = "<YOUR_AUTH_TOKEN>"
-    let authToken = "37046b6bbce2064018367eaf61b60080"
 
-    
-    
-    
-    
-    
-    
-    
     func getVideoFullServicesDataFromVimeo(_ theseVideos: String)
     {
         
@@ -120,8 +115,6 @@ class APIController
         var request = URLRequest(url: myURL!)
         
         request.httpMethod = "GET"  // Compose a query string
-        // request.addValue("Bearer " + authToken, forHTTPHeaderField: "Authorization")
-        
         let task = URLSession.shared.dataTask(with: request, completionHandler: { (data: Data?, response: URLResponse?, error: Error?) -> Void in
             
             DispatchQueue.main.async(execute: { () -> Void in
@@ -139,18 +132,11 @@ class APIController
                 
                 if let vimeoData = data, let jsonResponse = try? JSONSerialization.jsonObject(with: vimeoData, options: []) as? [String: AnyObject], let myJSON = jsonResponse
                 {
-                    //print(vimeoData)
-                    //print(myJSON)
-                    // here "vimeoData" is the dictionary encoded in JSON data
-                    // let dataArray = myJSON["data"] as? [[String: AnyObject]]
                     let dataDict = myJSON as? [String: AnyObject]
                     
                     if let constDict = dataDict
                     {
-                        // print(constDict)
                         let aPlaylist = MonkeyPlaylist(dictionary: constDict)
-                        //self.theMonkeyVideos.append(aPlaylist)
-                        
                         
 //*********** FIX HERE **************!!!!
                         self.delegate.gotTheseVideos(withOrder: "b", thePlaylist: aPlaylist)
@@ -160,15 +146,6 @@ class APIController
                         var retrievedArray = [Video]()
                         
                         // ******************************************** COME BACK AND USE THIS !!!  ********************************
-                        
-                        
-                        //                        for value in constArray
-                        //                        {
-                        //                            let video = Video(dictionary: value)
-                        //                            self.videoArrayOfServices.append(video)
-                        //                        }
-                        //self.delegate.gotTheVideos(self.videoArrayOfServices)
-                        // self.delegate.gotTheVideos(withOrder: "a", theVideos: self.videoArrayOfServices)
                     }
                 }
                 else
@@ -192,7 +169,7 @@ class APIController
         var request = URLRequest(url: myURL!)
         
         request.httpMethod = "GET"  // Compose a query string
-        request.addValue("Bearer " + authToken, forHTTPHeaderField: "Authorization")
+       // request.addValue("Bearer " + authToken, forHTTPHeaderField: "Authorization")
         
         let task = URLSession.shared.dataTask(with: request, completionHandler: { (data: Data?, response: URLResponse?, error: Error?) -> Void in
             
@@ -235,24 +212,19 @@ class APIController
 
     }
     
-    func getVideoSermonsDataFromVimeo(_ theseVideos: String)
+    func getAllVideoDataFromMonkey()
     {
-        
-        let URLString = baseURLString + theseVideos
+        // h ttp://www.streammonkey.com/api/videos?username=awolfe@clevelandfbc.com
+        let URLString = minBaseURL + dataBaseEntryPoint
         let myURL = URL(string: URLString)
         var request = URLRequest(url: myURL!)
-        
         request.httpMethod = "GET"  // Compose a query string
-        request.addValue("Bearer " + authToken, forHTTPHeaderField: "Authorization")
         
         let task = URLSession.shared.dataTask(with: request, completionHandler: { (data: Data?, response: URLResponse?, error: Error?) -> Void in
-            print("Made a call to Vimeo API for \(theseVideos) ")
-
             DispatchQueue.main.async(execute: { () -> Void in
-                print("Vimeo error: \(error)")
+               // print("JSON error: \(error?.localizedDescription ?? "Json error")")
                 if let httpResponse = response as? HTTPURLResponse
                 {
-                    //print(httpResponse)
                     if httpResponse.statusCode != 200
                     {
                         print("You got 404!!!???")
@@ -260,41 +232,34 @@ class APIController
                         return
                     }
                 }
+//                let returnData = String(data: data!, encoding: .utf8)
+//                print(returnData)
                 
-                if let vimeoData = data, let jsonResponse = try? JSONSerialization.jsonObject(with: vimeoData, options: []) as? [String: AnyObject], let myJSON = jsonResponse
+                if let monkeyData = data, let jsonResponse = try? JSONSerialization.jsonObject(with: monkeyData, options: [.allowFragments]) as? [String: AnyObject], let myJSON = jsonResponse
                 {
                     // here "vimeoData" is the dictionary encoded in JSON data
-                    
                     let dataArray = myJSON["data"] as? [[String: AnyObject]]
-                    
+                   // print(dataArray)
                     if let constArray = dataArray
                     {
                         for value in constArray
                         {
-                            let video = Video(dictionary: value)
-                            self.videoArrayOfSermons.append(video)
-//                            if !self.checkArrayAudioRlm.contains(video.uri!)
-//                            {
-//                              self.videoArrayOfSermons.append(video)
-//                                print("appended item: \(video.uri)")
-//                            }
-                            
+                            guard let word = (value["title"] as? String) else { return }
+                            self.testArray.append(word)
+                           // let video = Video(dictionary: value)
+                            //self.videoArrayOfSermons.append(video)
                         }
-                       // self.delegate.gotTheVideos(self.videoArrayOfSermons)
-                     //   self.delegate.gotTheVideos(withOrder: "b", theVideos: self.videoArrayOfSermons)
-                        print("passing items: \(self.videoArrayOfSermons.count)")
                     }
                 }
                 else
                 {
                     self.networkAlert()
-                    //self.delegate.gotTheVideos(self.videoArrayOfSermons)
                 }
             })
         })
         
-        
         task.resume()
+        print(testArray)
         
         return
     }
@@ -308,7 +273,7 @@ class APIController
         var request = URLRequest(url: myURL!)
         
         request.httpMethod = "GET"  // Compose a query string
-        request.addValue("Bearer " + authToken, forHTTPHeaderField: "Authorization")
+       // request.addValue("Bearer " + authToken, forHTTPHeaderField: "Authorization")
         
         let task = URLSession.shared.dataTask(with: request, completionHandler: { (data: Data?, response: URLResponse?, error: Error?) -> Void in
             print("Made a call to Vimeo API for \(theseVideos) ")

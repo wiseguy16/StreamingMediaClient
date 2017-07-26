@@ -146,6 +146,10 @@ extension DetailsViewController: APIControllerProtocol {
         print(value)
         guard let theVids = thePlaylist.videos else { return }
         videos = theVids
+        for vid in videos {
+            guard let title = vid.title, let date = vid.date, let deskript = vid.deskript, let image = vid.image, let videoM3U8 = vid.m3u8file else { return }
+            CoreDataManager.storeObj(with: title, date: date, deskript: deskript, image: image, videoM3U8: videoM3U8)
+        }
         detailsTableView.reloadData()
 //        for aVid in theVids {
 //            let image = aVid.image

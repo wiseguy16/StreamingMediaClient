@@ -13,8 +13,14 @@ protocol APIControllerProtocol
     func gotTheseVideos(withOrder value: String, thePlaylist: MonkeyPlaylist)
 }
 
+let backupString = "NOT AVAILABLE"
+let backupURLString = "//placeimg.com/320/180/tech/grayscale"
+
+
 
 class ViewController: UIViewController {
+    
+    var backupURL: URL?
     
     @IBOutlet weak var liveLabel: UILabel!
     @IBOutlet weak var liveImageView: UIImageView!
@@ -48,6 +54,7 @@ class ViewController: UIViewController {
         self.title = clientTitle
         anApiController = APIController(delegate: self)
         anApiController.getVideoFullServicesDataFromVimeo(theseVideosString)
+        backupURL = URL(string: backupURLString)
         monkeyTableView.tableFooterView = UIView()
 
         // Do any additional setup after loading the view, typically from a nib.
@@ -86,14 +93,17 @@ extension ViewController: APIControllerProtocol {
             monkeys = theMonkeys
             if monkeys.count > 0 {
                 let firstMonkey = monkeys[0]
-                guard let id = firstMonkey.id, let date = firstMonkey.date, let title = firstMonkey.title, let organization = firstMonkey.organization, let witeLabel = firstMonkey.whiteLabel, let theme = firstMonkey.theme, let image = firstMonkey.image else { return }
-               // imageLabel.text = image
-               // let parseImage = image.replacingOccurrences(of: "//", with: "http://")
-                let liveTitle = firstMonkey.liveStreams?.first?.title
+                guard let image = firstMonkey.image else { return }
+                guard let liveStream = firstMonkey.liveStreams else { return }
+                
+                let liveTitle = liveStream.first?.title ?? backupString
                 liveLabel.text = liveTitle
-                let liveDeskript = firstMonkey.liveStreams?.first?.deskript
+                
+                let liveDeskript = liveStream.first?.deskript ?? backupString
                 liveDeskriptLabel.text = liveDeskript
-                let liveURL = changeStringToURL((firstMonkey.liveStreams?.first?.image)!)
+                
+                let aStringURL = liveStream.first?.image ?? backupURLString
+                let liveURL = changeStringToURL(aStringURL)
                 let url = changeStringToURL(image)
                 
                 if let cats = firstMonkey.categories {
@@ -112,6 +122,7 @@ extension ViewController: APIControllerProtocol {
                         self.bgBlurImageView.image = UIImage(data: data!)
                         self.addBlur(onImage: self.bgBlurImageView)
                         self.liveImageView.image = UIImage(data: dataLive!)
+                        self.addShadowToImageView(imageView: self.liveImageView)
                     }
                 }
                 
@@ -168,11 +179,27 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         monkeyTableView.deselectRow(at: indexPath, animated: true)
         let aCat = monkeyCategories[indexPath.row]
-        let aListInfo = aCat.playlistsInfo![0]
-        let detailVC = self.storyboard?.instantiateViewController(withIdentifier: "MonkeyVideosTableViewController") as! MonkeyVideosTableViewController
-        detailVC.monkeyCat = aCat
-        detailVC.monkeyPlaylistInfo = aListInfo
-        self.navigationController?.pushViewController(detailVC, animated: true)
+        if aCat.playlistsInfo != nil  {
+            if (aCat.playlistsInfo?.count)! > 0 {
+                if let aListInfo = aCat.playlistsInfo?[0]  {
+                    let detailVC = self.storyboard?.instantiateViewController(withIdentifier: "MonkeyVideosTableViewController") as! MonkeyVideosTableViewController
+                    detailVC.monkeyCat = aCat
+                    detailVC.monkeyPlaylistInfo = aListInfo
+                    self.navigationController?.pushViewController(detailVC, animated: true)
+                }
+            } else {
+                print("not the droids you are looking for")
+                anApiController.networkAlert()
+            }
+        } else {
+            print("not the droids you are looking for")
+            anApiController.networkAlert()
+        }
+        
+//        let detailVC = self.storyboard?.instantiateViewController(withIdentifier: "MonkeyVideosTableViewController") as! MonkeyVideosTableViewController
+//        detailVC.monkeyCat = aCat
+//        detailVC.monkeyPlaylistInfo = aListInfo
+//        self.navigationController?.pushViewController(detailVC, animated: true)
     }
     
    
@@ -189,9 +216,26 @@ extension UIViewController {
     }
     
     func changeStringToURL(_ sizeAsString: String) -> URL {
-        let newString = "http:" + sizeAsString
-        let url = URL(string: newString)!
-        return url
+        let localBackupURLString = "https://placeimg.com/320/180/tech/grayscale"
+        let localBackupURL = URL(string: localBackupURLString)
+        var newString = ""
+        if sizeAsString == "" {
+            newString = localBackupURLString
+        } else {
+            newString = "http:" + sizeAsString
+        }
+        let url = URL(string: newString) ?? localBackupURL
+        return url!
+    }
+    
+    func addShadowToImageView(imageView: UIImageView) {
+        imageView.layer.shadowColor = UIColor.black.cgColor
+        imageView.layer.shadowOpacity = 1
+        imageView.layer.shadowOffset = CGSize.zero
+        imageView.layer.shadowRadius = 10
+        imageView.layer.shadowPath = UIBezierPath(rect: imageView.bounds).cgPath
+        imageView.layer.shouldRasterize = false
+        imageView.layer.cornerRadius = 10
     }
     
 

@@ -14,7 +14,7 @@ class MonkeyVideosTableViewController: UITableViewController {
     var monkeyVids: [MonkeyVideo]? = []
     var monkeyPlaylist: MonkeyPlaylist?
     var monkeyPlaylistInfo: MonkeyPlaylistInfo!
-    var theseVideosString = "first-baptist-cleveland"
+    var theseVideosString = client
     var playlists: [MonkeyPlaylistInfo] = []
     
     var anApiController: APIController!

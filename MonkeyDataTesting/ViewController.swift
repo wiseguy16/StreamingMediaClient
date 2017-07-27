@@ -82,6 +82,12 @@ class ViewController: UIViewController {
             }
             
         }
+        else if segue.identifier == "SearchSegue" {
+            let destVC = segue.destination as! SearchViewController
+            destVC.title = "Search Videos"
+            print("Went to searching")
+            
+        }
     }
 
 

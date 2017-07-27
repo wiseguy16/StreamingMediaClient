@@ -34,6 +34,7 @@
 		4AC1FEE21F27C1F200613334 /* DetailVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC1FEE11F27C1F200613334 /* DetailVideoCell.swift */; };
 		4AC1FEE41F293AC000613334 /* RawVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC1FEE31F293AC000613334 /* RawVideo.swift */; };
 		4AC1FEE61F29464200613334 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC1FEE51F29464200613334 /* CoreDataManager.swift */; };
+		4AC1FEE81F2A363A00613334 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC1FEE71F2A363900613334 /* SearchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		4AC1FEE11F27C1F200613334 /* DetailVideoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailVideoCell.swift; sourceTree = "<group>"; };
 		4AC1FEE31F293AC000613334 /* RawVideo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RawVideo.swift; sourceTree = "<group>"; };
 		4AC1FEE51F29464200613334 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		4AC1FEE71F2A363900613334 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				4AC1FED91F267BD500613334 /* RefTableViewController.swift */,
 				4AC1FEE11F27C1F200613334 /* DetailVideoCell.swift */,
 				4AC1FEC71F21492B00613334 /* MonkeyPlaylist.swift */,
+				4AC1FEE71F2A363900613334 /* SearchViewController.swift */,
 				4AC1FED71F267BAE00613334 /* MonkeyCell.swift */,
 				4AC1FEDD1F26869B00613334 /* MonkeyVideoCell.swift */,
 				4AC1FECF1F22798100613334 /* MonkeyPlaylistInfo.swift */,
@@ -218,6 +221,7 @@
 				4AC1FEE01F27AE1700613334 /* DetailsViewController.swift in Sources */,
 				4AC1FECC1F214EBF00613334 /* MonkeyImagesViewController.swift in Sources */,
 				4AC1FEDA1F267BD500613334 /* RefTableViewController.swift in Sources */,
+				4AC1FEE81F2A363A00613334 /* SearchViewController.swift in Sources */,
 				4AC1FECE1F21617C00613334 /* MonkeyCategoryViewController.swift in Sources */,
 				4A0278741F2105050060DAC3 /* AppDelegate.swift in Sources */,
 				4AC1FEE21F27C1F200613334 /* DetailVideoCell.swift in Sources */,

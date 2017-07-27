@@ -80,6 +80,9 @@ class CoreDataManager: NSObject {
         var rawArray = [RawVideo]()
         let fetchReq: NSFetchRequest<RawVideoEntity> = RawVideoEntity.fetchRequest()
         
+        
+    // STAGE 1 SEARCH FETCH.......
+        
         var preDicate = NSPredicate(format: "title contains[c] %@", searchTerm)
        // preDicate = NSPredicate(format: "by == %@", "wang")
        // preDicate = NSPredicate(format: "year > %@", "2012")
@@ -103,13 +106,38 @@ class CoreDataManager: NSObject {
         } catch {
             print(error.localizedDescription)
         }
-        for vid in rawArray {
-            print(vid.title)
-            print(vid.deskript)
-            print(vid.date)
-            print(vid.image!)
-            print(vid.videoM3U8)
+        
+        
+    // STAGE 2 SEARCH FETCH.......
+        
+        preDicate = NSPredicate(format: "deskript contains[c] %@", searchTerm)
+        
+        fetchReq.predicate = preDicate
+        
+        do {
+            
+            let fetchResult = try getContext().fetch(fetchReq)
+            
+            for item in fetchResult {
+                
+                if let title = item.title, let date = item.date, let deskript = item.deskript, let image = item.image, let videoM3U8 = item.videoM3U8 {
+                    
+                    let vid = RawVideo(title: title, date: date, deskript: deskript, image: image, videoM3U8: videoM3U8)
+                    if rawArray.contains(where: { $0.videoM3U8 == vid.videoM3U8 }) {
+                        print("Do not duplicate")
+                    } else {
+                        rawArray.append(vid)
+
+                    }
+                    
+                    //rawArray.append(vid)
+                }
+            }
+            // print(fetchResult)
+        } catch {
+            print(error.localizedDescription)
         }
+
         
         return rawArray
         

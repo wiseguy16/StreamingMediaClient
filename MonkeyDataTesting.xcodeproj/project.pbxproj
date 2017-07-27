@@ -35,6 +35,7 @@
 		4AC1FEE41F293AC000613334 /* RawVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC1FEE31F293AC000613334 /* RawVideo.swift */; };
 		4AC1FEE61F29464200613334 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC1FEE51F29464200613334 /* CoreDataManager.swift */; };
 		4AC1FEE81F2A363A00613334 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC1FEE71F2A363900613334 /* SearchViewController.swift */; };
+		4AC1FEEA1F2A490D00613334 /* ResultsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC1FEE91F2A490C00613334 /* ResultsCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		4AC1FEE31F293AC000613334 /* RawVideo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RawVideo.swift; sourceTree = "<group>"; };
 		4AC1FEE51F29464200613334 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		4AC1FEE71F2A363900613334 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		4AC1FEE91F2A490C00613334 /* ResultsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,24 +105,18 @@
 				4A0278731F2105050060DAC3 /* AppDelegate.swift */,
 				4A02788C1F2109D90060DAC3 /* Video.swift */,
 				4AC1FEE51F29464200613334 /* CoreDataManager.swift */,
-				4A02788E1F2109F30060DAC3 /* DataManager.swift */,
+				4A02788A1F2109C40060DAC3 /* APIController.swift */,
 				4AC1FEE31F293AC000613334 /* RawVideo.swift */,
+				4A02788E1F2109F30060DAC3 /* DataManager.swift */,
 				4AC1FED91F267BD500613334 /* RefTableViewController.swift */,
 				4AC1FEE11F27C1F200613334 /* DetailVideoCell.swift */,
-				4AC1FEC71F21492B00613334 /* MonkeyPlaylist.swift */,
 				4AC1FEE71F2A363900613334 /* SearchViewController.swift */,
+				4AC1FEE91F2A490C00613334 /* ResultsCell.swift */,
 				4AC1FED71F267BAE00613334 /* MonkeyCell.swift */,
 				4AC1FEDD1F26869B00613334 /* MonkeyVideoCell.swift */,
-				4AC1FECF1F22798100613334 /* MonkeyPlaylistInfo.swift */,
-				4AC1FED51F26704300613334 /* MonkeyVideo.swift */,
-				4AC1FEC91F21497300613334 /* MonkeyImage.swift */,
-				4AC1FEC51F21490300613334 /* LiveMonkey.swift */,
-				4AC1FEC31F2148DF00613334 /* MonkeyCategory.swift */,
+				4AC1FEEB1F2A4EC200613334 /* Data Models */,
 				4AC1FEDB1F26861000613334 /* MonkeyVideosTableViewController.swift */,
-				4AC1FEC11F21489F00613334 /* FeaturedMonkey.swift */,
-				4AC1FEBF1F21126400613334 /* MonkeyChannel.swift */,
 				4AC1FEDF1F27AE1700613334 /* DetailsViewController.swift */,
-				4A02788A1F2109C40060DAC3 /* APIController.swift */,
 				4A0278751F2105050060DAC3 /* ViewController.swift */,
 				4AC1FECB1F214EBF00613334 /* MonkeyImagesViewController.swift */,
 				4AC1FECD1F21617C00613334 /* MonkeyCategoryViewController.swift */,
@@ -131,6 +127,21 @@
 				4A02787A1F2105050060DAC3 /* MonkeyDataTesting.xcdatamodeld */,
 			);
 			path = MonkeyDataTesting;
+			sourceTree = "<group>";
+		};
+		4AC1FEEB1F2A4EC200613334 /* Data Models */ = {
+			isa = PBXGroup;
+			children = (
+				4AC1FEC71F21492B00613334 /* MonkeyPlaylist.swift */,
+				4AC1FECF1F22798100613334 /* MonkeyPlaylistInfo.swift */,
+				4AC1FED51F26704300613334 /* MonkeyVideo.swift */,
+				4AC1FEC91F21497300613334 /* MonkeyImage.swift */,
+				4AC1FEC51F21490300613334 /* LiveMonkey.swift */,
+				4AC1FEC31F2148DF00613334 /* MonkeyCategory.swift */,
+				4AC1FEC11F21489F00613334 /* FeaturedMonkey.swift */,
+				4AC1FEBF1F21126400613334 /* MonkeyChannel.swift */,
+			);
+			name = "Data Models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,6 +241,7 @@
 				4AC1FEE41F293AC000613334 /* RawVideo.swift in Sources */,
 				4AC1FECA1F21497300613334 /* MonkeyImage.swift in Sources */,
 				4AC1FEDE1F26869B00613334 /* MonkeyVideoCell.swift in Sources */,
+				4AC1FEEA1F2A490D00613334 /* ResultsCell.swift in Sources */,
 				4AC1FEC01F21126400613334 /* MonkeyChannel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

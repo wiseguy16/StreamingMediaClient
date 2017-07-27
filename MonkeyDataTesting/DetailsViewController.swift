@@ -117,21 +117,6 @@ extension DetailsViewController: UITableViewDelegate, UITableViewDataSource {
                 playerViewController.player?.play()
             }
         }
-//        let videoURL = URL(string: aVid.m3u8file!)
-//        
-//        let player = AVPlayer(url: videoURL!)
-//        let playerViewController = AVPlayerViewController()
-//        playerViewController.player = player
-//        self.present(playerViewController, animated: true) {
-//            playerViewController.player?.play()
-//        }
-
-//        let aCat = monkeyCategories[indexPath.row]
-//        let aListInfo = aCat.playlistsInfo![0]
-//        let detailVC = self.storyboard?.instantiateViewController(withIdentifier: "MonkeyVideosTableViewController") as! MonkeyVideosTableViewController
-//        detailVC.monkeyCat = aCat
-//        detailVC.monkeyPlaylistInfo = aListInfo
-//        self.navigationController?.pushViewController(detailVC, animated: true)
     }
     
     
@@ -146,16 +131,14 @@ extension DetailsViewController: APIControllerProtocol {
         print(value)
         guard let theVids = thePlaylist.videos else { return }
         videos = theVids
-        for vid in videos {
-            guard let title = vid.title, let date = vid.date, let deskript = vid.deskript, let image = vid.image, let videoM3U8 = vid.m3u8file else { return }
-            CoreDataManager.storeObj(with: title, date: date, deskript: deskript, image: image, videoM3U8: videoM3U8)
-        }
-        detailsTableView.reloadData()
-//        for aVid in theVids {
-//            let image = aVid.image
-//            let title = aVid.title
-//            print(title)
+//        for vid in videos {
+//            guard let title = vid.title, let date = vid.date, let deskript = vid.deskript, let image = vid.image, let videoM3U8 = vid.m3u8file else { return }
+//            
+//    //****** THIS IS WHERE CURRENT DATABASE STORAGE HAPPENS  **********************
+//            CoreDataManager.storeObj(with: title, date: date, deskript: deskript, image: image, videoM3U8: videoM3U8)
 //        }
+        detailsTableView.reloadData()
+
     }
     
 }
